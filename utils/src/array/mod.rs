@@ -1,4 +1,4 @@
-use rand::{CryptoRng, Rng, random};
+use rand::{CryptoRng, Rng};
 
 
 pub fn random_array<R: CryptoRng + Rng>(n: usize, min: i32, max: i32) -> Vec<i32> {

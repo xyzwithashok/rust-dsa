@@ -12,11 +12,12 @@ pub fn max_value_of_expression(arr: Vec<i32>) -> i32 {
     for i in 0..n {
         let temp1: i32 = arr[i] + i as i32;
         let temp2: i32 = arr[i] - i as i32;
-        max1 = max(temp1, temp2);
+        max1 = max(max1, temp1);
         min1 = min(min1, temp1);
         max2 = max(max2, temp2);
         min2 = min(min2, temp2);
     }
+
     max((max1 - min1), (max2 - min2))
 }
 
@@ -27,6 +28,7 @@ mod tests {
     #[test]
     fn test_max_value() {
         let arr = vec![1, 15, 13, 8];
-        // assert_eq!(max_value(arr), 90);
+        println!("max_value {:?}", max_value_of_expression(arr.clone()));
+        // assert_eq!(max_value_of_expression(arr), 6);
     }
 }
